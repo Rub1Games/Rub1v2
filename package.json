@@ -1,0 +1,22 @@
+{
+  "name": "downloads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "enmap": "^0.4.2",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^4.0.0",
+    "install": "^0.10.4",
+    "opusscript": "^0.0.6",
+    "simple-youtube-api": "^5.0.2",
+    "youtube-api-simple": "^0.2.2",
+    "ytdl-core": "^0.20.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
