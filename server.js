@@ -168,7 +168,6 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
 
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
 		.on('end', reason => {
-      message.channel.send('``The queue of song is end.``');
 			if (reason === 'Stream is not generating quickly enough.') console.log('Song ended.');
 			else console.log(reason);
 			serverQueue.songs.shift();
