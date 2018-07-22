@@ -145,6 +145,24 @@ break;
 
           });
 break;
+		    
+	    case "ping":
+		    console.log('Ping!');
+
+startTime = Date.now();
+
+message.channel.send("Ping!").then((message) = > {
+	endTime = Date.now();
+	
+	let ping = Math.round(endTime - startTime)
+
+	let rounded = ping / 1000
+
+	message.edit(`Ping! | ${ping}ms | ${rounded} seconds`)
+
+	console.log('Pinged by ${author}');
+});
+break;
 }
 async function handleVideo(video, message, voiceChannel, playlist = false) {
 	var serverQueue = queue.get(message.guild.id);
