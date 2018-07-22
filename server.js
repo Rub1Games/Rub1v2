@@ -151,7 +151,7 @@ break;
 
 startTime = Date.now();
 
-message.channel.send("Ping!").then((message) = > {
+message.channel.send("Ping!").then((message) => {
 	endTime = Date.now();
 	
 	let ping = Math.round(endTime - startTime)
