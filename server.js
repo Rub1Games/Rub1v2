@@ -119,10 +119,10 @@ break;
 	return undefined;
 break;
 	    case "clear":
-		if(isNaN(args[0])) return message.channel.send('**Please Suply a valid amount to clear**')
-		if(args[0]>100) return message.channel.send(`\`ERROR\` \`\`\`\nMaximum of 100!\n\`\`\``);
-		message.channel.bulkDelete(args[0])
-			.then ( messages => message.channel.send(`Successful deleted **\`${messages.size}/${args[0]}\` messages**`).then ( message => message.delete({ timeout: 10000 })))
+		if(isNaN(args[1])) return message.channel.send('**Please Suply a valid amount to clear**')
+		if(args[1]>100) return message.channel.send(`\`ERROR\` \`\`\`\nMaximum of 100!\n\`\`\``);
+		message.channel.bulkDelete(args[1])
+			.then ( messages => message.channel.send(`Successful deleted **\`${messages.size}/${args[1]}\` messages**`).then ( message => message.delete({ timeout: 10000 })))
 			.catch(error => console.log(error));
 break;
 }
