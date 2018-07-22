@@ -5,7 +5,6 @@ const youtube = new YouTube(GOOGLE_API_KEY);
 const queue = new Map();
 const { Client, Util } = require('discord.js');
 var fs = require('fs');
-var profanities = require('profanities')
 const client = new Client({ disableEveryone: true });
 
 var CommandsList = JSON.parse(fs.readFileSync('Commands.txt', utf8));
