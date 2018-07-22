@@ -15,6 +15,7 @@ client.on("message", async message => {
 	var url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
 	var serverQueue = queue.get(message.guild.id);
     switch (args[0].toLowerCase()) {
+      case "p":
       case "play":
     var voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
@@ -66,12 +67,14 @@ Please provide a value to select one of the search results ranging from 1-10.
 			return handleVideo(video, message, voiceChannel);
 		}
         break;
+      case "sk":
       case "skip":
 		if (!message.member.voiceChannel) return message.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return message.channel.send('There is nothing playing that I could skip for you.');
 		serverQueue.connection.dispatcher.end('Skip command has been used!');
 		return undefined;
         break;
+      case "st":
       case "stop":
 		if (!message.member.voiceChannel) return message.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return message.channel.send('There is nothing playing that I could stop for you.');
@@ -79,6 +82,7 @@ Please provide a value to select one of the search results ranging from 1-10.
 		serverQueue.connection.dispatcher.end('Stop command has been used!');
 		return undefined;
 break;
+      case "v":
       case "volume":
 		if (!message.member.voiceChannel) return message.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return message.channel.send('There is nothing playing.');
@@ -91,6 +95,7 @@ break;
 		if (!serverQueue) return message.channel.send('There is nothing playing.');
 		return message.channel.send(`🎶 Now playing: **${serverQueue.songs[0].title}**`);
 break;
+      case "q":
       case "queue":
 		if (!serverQueue) return message.channel.send('There is nothing playing.');
 		return message.channel.send(`
@@ -118,6 +123,7 @@ break;
 
 	return undefined;
 break;
+	    case "c":
 	    case "clear":
 		message.channel.fetchMessages()
 
