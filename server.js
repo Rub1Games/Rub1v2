@@ -7,7 +7,7 @@ const { Client, Util } = require('discord.js');
 var fs = require('fs');
 const client = new Client({ disableEveryone: true });
 
-var CommandsList = JSON.parse(fs.readFileSync('Commands.txt', 'utf8'));
+var CommandsList = fs.readFileSync('Commands.txt', 'utf8');
 
 var servers = {};
 var prefix = '-';
