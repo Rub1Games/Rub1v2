@@ -1,3 +1,8 @@
+
+__**COMMANDS**__
+
+```css
+
     - [-play / -p] (sofiacxrtes)
     - [-stop / -st] (sofiacxrtes)
     - [-np] (sofiacxrtes)
@@ -8,3 +13,4 @@
     - [-volume / -v] (sofiacxrtes)
     - [-queue / -q] (sofiacxrtes)
     - [-clear / -c] (sofiacxrtes)
+```
