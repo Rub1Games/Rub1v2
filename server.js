@@ -118,6 +118,13 @@ break;
 
 	return undefined;
 break;
+	    case "clear":
+		if(isNaN(args[0])) return message.channel.send('**Please Suply a valid amount to clear**')
+		if(args[0]>100) return message.channel.send(`\`ERROR\` \`\`\`\nMaximum of 100!\n\`\`\``);
+		message.channel.bulkDelete(args[0])
+			.then ( messages => message.channel.send(`Successful deleted **\`${messages.size}/${args[0]}\` messages**`).then ( message => message.delete({ timeout: 10000 })))
+			.catch(error => console.log(error));
+break;
 }
 async function handleVideo(video, message, voiceChannel, playlist = false) {
 	var serverQueue = queue.get(message.guild.id);
