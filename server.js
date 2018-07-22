@@ -4,7 +4,11 @@ const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./config');
 const youtube = new YouTube(GOOGLE_API_KEY);
 const queue = new Map();
 const { Client, Util } = require('discord.js');
+var fs = require('fs');
+var profanities = require('profanities')
 const client = new Client({ disableEveryone: true });
+
+var CommandsList = JSON.parse(fs.readFileSync('Commands.txt', utf8));
 
 var servers = {};
 var prefix = '-';
@@ -171,40 +175,7 @@ message.channel.send("Ping!").then((message) => {
 break;
 	    case "h":
 	    case "help":
-		    message.channel.send(`**Welcome to my discord server, my name is Rafael Vieira and here is some rules and hlp commands for you guys **
-`First of all you need to know some rules...`
-
-**:warning:️Don't Spam any chat;**
-
-**:warning:️All mods are here to help you don't be afraid;**
-
-**:warning:️Use the bot on the channel #command-bot in the category chill;**
-
-**:warning:️Don't be racist and repect everyone;**
-
-**:warning:️And use  the text channel in the correct category;**
-
-```prolog
-    - Infregiment Of The Rules Can  Result In A Permanent Ban So Please Dont Do The Things That Are Here Above
-
-```
-
-
-__**COMMANDS**__
-
-```css
-
-    - [-play / -p] (sofiacxrtes)
-    - [-stop / -st] (sofiacxrtes)
-    - [-np] (sofiacxrtes)
-    - [-resume] (sofiacxrtes)
-    - [-pause] (sofiacxrtes)
-    - [-ping] (sofiacxrtes)
-    - [-pause] (sofiacxrtes)
-    - [-volume / -v] (sofiacxrtes)
-    - [-queue / -q] (sofiacxrtes)
-    - [-clear / -c] (sofiacxrtes)
-````)
+		    message.channel.send(CommandsList)
 
 break;
 }
