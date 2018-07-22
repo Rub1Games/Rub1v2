@@ -158,7 +158,7 @@ message.channel.send("Ping!").then((message) => {
 
 	let rounded = ping / 1000
 
-	message.edit(`Ping! | ${ping}ms | ${rounded} seconds`)
+	message.edit(`Pong! | ${ping}ms | ${rounded} seconds`)
 
 	console.log('Pinged by ${author}');
 });
